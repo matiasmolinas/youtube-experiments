@@ -1,0 +1,25 @@
+{
+  "name": "YouTube Recommendations",
+  "version": "1.0",
+  "description": "YouTube Recommendations",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "manifest_version":2,
+  "browser_action": {
+    "default_title": "YouTube Recommendations",
+    "default_icon": "icon128.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/robots.txt*"],
+      "js": ["oauth2/oauth2_inject.js"],
+        "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "https://accounts.google.com/o/oauth2/token",
+    "https://www.googleapis.com/"
+  ]
+}
